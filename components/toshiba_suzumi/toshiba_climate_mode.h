@@ -40,7 +40,14 @@ enum class CustomFanModes {
 };
 
 // codes are reverse-engineered from Toshiba AC communication with the original Wifi module.
-enum class MODE { HEAT_COOL = 65, COOL = 66, HEAT = 67, DRY = 68, FAN_ONLY = 69 };
+
+enum class MODE {
+  HEAT_COOL = 65,
+  COOL = 66,
+  HEAT = 67,
+  DRY = 68,
+  FAN_ONLY = 69
+ };
 
 enum class FAN {
   QUIET = 49,
@@ -54,10 +61,9 @@ enum class FAN {
 
 enum class SWING {
   OFF = 49,
-  BOTH =  67,
   VERTICAL = 65,
   HORIZONTAL = 66,
-  VERTICAL_AND_HORIZONTAL = 67,
+  BOTH =  67,
   FIXED_1 = 80,
   FIXED_2 = 81,
   FIXED_3 = 82,

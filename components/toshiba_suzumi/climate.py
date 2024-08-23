@@ -17,6 +17,7 @@ CONF_PWR_SELECT = "power_select"
 CONF_SPECIAL_MODE = "special_mode"
 CONF_SPECIAL_MODE_MODES = "modes"
 
+FEATURE_FIXED_SWING = "fixed_swing"
 FEATURE_HORIZONTAL_SWING = "horizontal_swing"
 
 toshiba_ns = cg.esphome_ns.namespace("toshiba_suzumi")
@@ -59,6 +60,9 @@ async def to_code(config):
         sel = await select.new_select(config[CONF_PWR_SELECT], options=['50 %', '75 %', '100 %'])
         await cg.register_parented(sel, config[CONF_ID])
         cg.add(var.set_pwr_select(sel))
+
+    if FEATURE_FIXED_SWING in config:
+            cg.add(var.set_fixed_swing(True))
 
     if FEATURE_HORIZONTAL_SWING in config:
         cg.add(var.set_horizontal_swing(True))

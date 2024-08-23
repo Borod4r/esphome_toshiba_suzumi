@@ -389,8 +389,17 @@ ClimateTraits ToshibaClimateUart::traits() {
     traits.set_supported_swing_modes({climate::CLIMATE_SWING_OFF, climate::CLIMATE_SWING_VERTICAL,
                                       climate::CLIMATE_SWING_HORIZONTAL, climate::CLIMATE_SWING_BOTH});
   } else {
-    traits.set_supported_swing_modes({climate::CLIMATE_SWING_OFF, climate::CLIMATE_SWING_VERTICAL});
+
+    if (this->fixed_swing_) {
+      traits.set_supported_swing_modes({climate::CLIMATE_SWING_OFF, climate::CLIMATE_SWING_VERTICAL,
+                                        climate::CLIMATE_SWING_FIXED_1, climate::CLIMATE_SWING_FIXED_2,
+                                        climate::CLIMATE_SWING_FIXED_3, climate::CLIMATE_SWING_FIXED_4,
+                                        climate::CLIMATE_SWING_FIXED_5, climate::CLIMATE_SWING_NONE});
+    } else {
+      traits.set_supported_swing_modes({climate::CLIMATE_SWING_OFF, climate::CLIMATE_SWING_VERTICAL});
+    }
   }
+
   traits.set_supports_current_temperature(true);
 
   traits.add_supported_fan_mode(CLIMATE_FAN_AUTO);
