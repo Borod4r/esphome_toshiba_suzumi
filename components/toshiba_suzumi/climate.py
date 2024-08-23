@@ -37,6 +37,7 @@ CONFIG_SCHEMA = climate.CLIMATE_SCHEMA.extend(
         cv.Optional(CONF_PWR_SELECT): select.SELECT_SCHEMA.extend({
             cv.GenerateID(): cv.declare_id(ToshibaPwrModeSelect),
         }),
+        cv.Optional(FEATURE_FIXED_SWING): cv.boolean,
         cv.Optional(FEATURE_HORIZONTAL_SWING): cv.boolean,
         cv.Optional(CONF_SPECIAL_MODE): select.SELECT_SCHEMA.extend({
             cv.GenerateID(): cv.declare_id(ToshibaSpecialModeSelect),
