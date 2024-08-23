@@ -56,7 +56,14 @@ enum class SWING {
   OFF = 49,
   BOTH =  67,
   VERTICAL = 65,
-  HORIZONTAL = 66
+  HORIZONTAL = 66,
+  VERTICAL_AND_HORIZONTAL = 67,
+  FIXED_1 = 80,
+  FIXED_2 = 81,
+  FIXED_3 = 82,
+  FIXED_4 = 83,
+  FIXED_5 = 84,
+  NONE = 0x00
 };
 
 enum class STATE {
