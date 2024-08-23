@@ -20,6 +20,7 @@ static const std::string &CUSTOM_PWR_LEVEL_100 = "100 %";
 static const std::string &SPECIAL_MODE_STANDARD = "Standard";
 static const std::string &SPECIAL_MODE_HI_POWER = "Hi POWER";
 static const std::string &SPECIAL_MODE_ECO = "ECO";
+
 // Special modes described at:
 // https://partner.toshiba-klima.at/data/01_RAS/02_Multi/01_R32/01_multi_indoor/02_SHORAI_EDGE_J2KVSG/02_Manuals/OM_RAS_18_B22_B24_J2KVSG_J2AVSG_E_ML.pdf
 static const std::string &SPECIAL_MODE_FIREPLACE_1 = "Fireplace 1";
@@ -28,10 +29,19 @@ static const std::string &SPECIAL_MODE_EIGHT_DEG = "8 degrees";
 static const std::string &SPECIAL_MODE_SILENT_1 = "Silent#1"; 
 static const std::string &SPECIAL_MODE_SILENT_2 = "Silent#2"; 
 
-enum class CustomFanModes { QUIET, LEVEL_1, LEVEL_2, LEVEL_3, LEVEL_4, LEVEL_5, AUTO };
+enum class CustomFanModes { 
+  QUIET,
+  LEVEL_1,
+  LEVEL_2,
+  LEVEL_3,
+  LEVEL_4,
+  LEVEL_5,
+  AUTO
+};
 
-// codes as reverse engineered from Toshiba AC communication with original Wifi module.
+// codes are reverse-engineered from Toshiba AC communication with the original Wifi module.
 enum class MODE { HEAT_COOL = 65, COOL = 66, HEAT = 67, DRY = 68, FAN_ONLY = 69 };
+
 enum class FAN {
   QUIET = 49,
   FANMODE_1 = 50,
@@ -41,9 +51,24 @@ enum class FAN {
   FANMODE_5 = 54,
   AUTO = 65
 };
-enum class SWING { OFF = 49, BOTH =  67, VERTICAL = 65, HORIZONTAL = 66 };
-enum class STATE { ON = 48, OFF = 49 };
-enum class PWR_LEVEL { PCT_50 = 50, PCT_75 = 75, PCT_100 = 100 };
+
+enum class SWING {
+  OFF = 49,
+  BOTH =  67,
+  VERTICAL = 65,
+  HORIZONTAL = 66
+};
+
+enum class STATE {
+  ON = 48,
+  OFF = 49
+};
+
+enum class PWR_LEVEL { 
+  PCT_50 = 50,
+  PCT_75 = 75,
+  PCT_100 = 100
+};
 
 enum SPECIAL_MODE {
   STANDARD = 0,
